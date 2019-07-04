@@ -16,10 +16,10 @@ source .env/bin/activate
 pip install -r requirements.txt
 ```
 
-You should pre-create the following resources and provides their details in the configuraion below:
-* AWS Certificate Manager certificate for `nginx.example.com` (wildcard will do as well)
-* Amazon Route 53 Private Hosted Zone for `example.com`
-* Amazon VPC with at least 2 private subnets and an Amazon VPC NAT Gateway
+You should pre-create the following resources and provide their details in the configuration below:
+* [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/) certificate for `nginx.example.com` (wildcard will do as well)
+* [Amazon Route 53](https://aws.amazon.com/route53/) Private Hosted Zone for `example.com`
+* [Amazon Virtual Private Cloud](https://aws.amazon.com/vpc/) (VPC) with at least 2 private subnets and a NAT Gateway
 
 The application expects a `config.json` in the root directory of the project with the following fields:
 ```json
@@ -39,7 +39,7 @@ The application expects a `config.json` in the root directory of the project wit
 }
 ```
 
-Once the above is all sorted out, check your code by generating AWS CloudFormation
+Once the above is all sorted out, test your code by generating [AWS CloudFormation](https://aws.amazon.com/cloudformation/)
 template locally:
 ```bash
 cdk synthesize
