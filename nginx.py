@@ -16,7 +16,7 @@ class Nginx(core.Stack):
         certificate = certificatemanager.Certificate.from_certificate_arn(
             self, 'certificate', config['certificate_arn'])
         hosted_zone = route53.HostedZone.from_lookup(
-            self, 'hosted_zone', domain_name='dataunicorn.ga', 
+            self, 'hosted_zone', domain_name=config['domain_name'], 
             private_zone=True, vpc_id=config['vpc_id'])
         vpc = ec2.Vpc.from_lookup(self, 'vpc', vpc_id=config['vpc_id'])
         cluster = ecs.Cluster(self, 'cluster', vpc=vpc)
@@ -24,7 +24,7 @@ class Nginx(core.Stack):
         load_balanced_fargate_service = ecs_patterns.LoadBalancedFargateService(
             self, 'fargate_service', cluster=cluster,
             certificate=certificate,
-            domain_name=config['domain_name'],
+            domain_name=config['nginx_domain_name'],
             domain_zone=hosted_zone,
             image=ecs.ContainerImage.from_registry(config['container_image']),
             public_load_balancer=False

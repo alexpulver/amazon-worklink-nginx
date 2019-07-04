@@ -6,8 +6,9 @@ The application expects a `config.json` in the root directory of the project wit
     "account": "****",
     "certificate_arn": "arn:aws:acm:eu-west-1:****:certificate/****",
     "container_image": "nginx",
-    "domain_name": "nginx.example.com",
+    "domain_name": "example.com",
     "hosted_zone_id":  "****",
+    "nginx_domain_name": "nginx.example.com",
     "region": "eu-west-1",
     "subnet_ids": [
         "subnet-****", 
