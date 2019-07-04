@@ -1,3 +1,6 @@
+# IDE
+.idea/
+
 # Application
 config.json
 
