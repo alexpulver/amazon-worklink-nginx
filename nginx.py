@@ -19,8 +19,8 @@ class Nginx(core.Stack):
             self, 'hosted_zone', domain_name=config['domain_name'], 
             private_zone=True, vpc_id=config['vpc_id'])
         vpc = ec2.Vpc.from_lookup(self, 'vpc', vpc_id=config['vpc_id'])
+
         cluster = ecs.Cluster(self, 'cluster', vpc=vpc)
-        
         load_balanced_fargate_service = ecs_patterns.LoadBalancedFargateService(
             self, 'fargate_service', cluster=cluster,
             certificate=certificate,
