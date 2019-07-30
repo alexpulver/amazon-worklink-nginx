@@ -4,7 +4,7 @@ The idea is to expose a fully private service externally. Hence all resources cr
 by this code are not exposed externally, only through WorkLink.
 
 First, you should follow [Getting Started with Amazon WorkLink](https://docs.aws.amazon.com/worklink/latest/ag/getting-started.html) to configure the service
-for the `nginx.example.com` domain. Then follow the instructions below to establsih routing
+for the `nginx.example.com` domain. Then follow the instructions below to establish routing
 from WorkLink to the application.
 
 In order to provision the application, install [AWS Cloud Development Kit](https://docs.aws.amazon.com/cdk/index.html) (CDK),
